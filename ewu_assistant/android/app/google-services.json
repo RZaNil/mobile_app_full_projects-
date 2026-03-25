@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "39202675916",
+    "project_id": "ewu-assistant",
+    "storage_bucket": "ewu-assistant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39202675916:android:ffbbb1328b0c1216d93669",
+        "android_client_info": {
+          "package_name": "com.example.ewu_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39202675916-mhtig3ubfc6b9mkln0fgqmvoe7m7ruq8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ewu_assistant",
+            "certificate_hash": "a1bc516328b4d5847763b830ecb86f7b9e34fa04"
+          }
+        },
+        {
+          "client_id": "39202675916-pk883kac6f1j3jos9v8b32v2q2oftbg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRpZCyiPR78R40GcTOG8Au7A4hoa_muGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39202675916-pk883kac6f1j3jos9v8b32v2q2oftbg4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "39202675916-l2sa768srlevcded2i6r1ekut4v5ostb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ewuAssistant"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
