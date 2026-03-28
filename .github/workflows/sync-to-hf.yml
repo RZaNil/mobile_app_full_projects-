@@ -33,8 +33,9 @@ jobs:
           git init
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git branch -M main
-          git add .
-          git commit -m "Sync backend to Hugging Face Space" || echo "No changes to commit"
+          git checkout -b main
+          git add -A
+          git status
+          git commit -m "Sync backend to Hugging Face Space" || true
           git remote add origin https://oauth2:${HF_TOKEN}@huggingface.co/spaces/niloy21/mobile_app
-          git push --force origin main
+          git push --force origin HEAD:main
