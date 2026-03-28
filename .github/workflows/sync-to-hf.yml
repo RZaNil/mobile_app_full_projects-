@@ -21,9 +21,9 @@ jobs:
           rm -rf space_sync
           mkdir space_sync
           cp -r backend space_sync/backend
-          cp Dockerfile space_sync/
-          cp README.md space_sync/ || true
-          cp .gitattributes space_sync/ || true
+          if [ -f backend/Dockerfile ]; then cp backend/Dockerfile space_sync/Dockerfile; fi
+          if [ -f backend/README.md ]; then cp backend/README.md space_sync/README.md; fi
+          if [ -f backend/.gitattributes ]; then cp backend/.gitattributes space_sync/.gitattributes; fi
 
       - name: Push to Hugging Face Space
         env:
