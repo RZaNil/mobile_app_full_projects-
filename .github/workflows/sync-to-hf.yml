@@ -16,11 +16,25 @@ jobs:
           lfs: true
           fetch-depth: 0
 
+      - name: Prepare clean Space contents
+        run: |
+          rm -rf space_sync
+          mkdir space_sync
+          cp -r backend space_sync/backend
+          cp Dockerfile space_sync/
+          cp README.md space_sync/ || true
+          cp .gitattributes space_sync/ || true
+
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git remote add space https://oauth2:${HF_TOKEN}@huggingface.co/spaces/niloy21/mobile_app
-          git push --force space main
+          cd space_sync
+          git init
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git branch -M main
+          git add .
+          git commit -m "Sync backend to Hugging Face Space" || echo "No changes to commit"
+          git remote add origin https://oauth2:${HF_TOKEN}@huggingface.co/spaces/niloy21/mobile_app
+          git push --force origin main
